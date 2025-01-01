@@ -6,7 +6,9 @@ params = {
 }
 
 threshold = {
-    "XRP" : 2.00
+    "low" : 2.00,
+    "exceeded": 3.00,
+    "target": 5.00
 }
 
 def send_xrp_alert():
@@ -17,14 +19,17 @@ def send_xrp_alert():
         xrp_rate = rates.get("XRP")
 
         if xrp_rate is not None:
-            if xrp_rate < threshold["XRP"]:
+            if xrp_rate < threshold["low"]:
                 print(f"XRP rate is currently at {xrp_rate} it is now below the threshold")
-            elif xrp_rate > 3.00 :
+            elif xrp_rate > threshold["target"] :
                 print(f"XRP has exceeded the threshold. Currently at {xrp_rate}")
-            elif xrp_rate > 5.00 :
+            elif xrp_rate > threshold["exceeded"] :
                 print(f"XRP has reached the target. Currently at {xrp_rate}")
             else:
-                print("XRP is stable")
-                exit()
+                print(f"XRP is stable, current rate: {xrp_rate}.")
+        else:
+            print("XRP rate data is unavailable")
+    else:
+        prnt(f"Failed to fetch data. HTTP Status Code: {response.status_code}")
 
 send_xrp_alert()
