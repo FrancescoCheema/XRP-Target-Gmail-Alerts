@@ -75,6 +75,3 @@ CryptoWhatsappAlerts/
 - The first time you run the email script, you will be prompted to authenticate via a URL.
 - Ensure your Google Cloud project is properly configured for Gmail API access.
 
-## License
-This project is licensed under the [MIT License](LICENSE).
-
