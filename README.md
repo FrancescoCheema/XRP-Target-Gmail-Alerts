@@ -1,9 +1,10 @@
 # Crypto WhatsApp Alerts
 
-A Python-based project to monitor cryptocurrency rates and send email alerts using the Gmail API. This project is ideal for those looking to integrate automated notifications with cryptocurrency monitoring functionality.
+A Python-based project to monitor cryptocurrency rates and send email alerts using the Gmail API. This project is ideal for those looking to integrate automated notifications with cryptocurrency monitoring functionality. By default, the script only sends alerts about XRP but can be modified in the crypto_alerts.py file.
+This is the coinlayer API documentation https://coinlayer.com/documentation
 
 ## Features
-- Fetches real-time cryptocurrency rates.
+- Fetches real-time cryptocurrency rates from the coinlayer API.
 - Sends email alerts for specified rate thresholds.
 - Uses Gmail API for email automation.
 - Configurable parameters for currency monitoring.
