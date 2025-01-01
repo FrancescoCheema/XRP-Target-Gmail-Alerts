@@ -48,13 +48,13 @@ pip install -r requirements.txt
 ### Monitor Cryptocurrency Rates
 Run the main script to start monitoring:
 ```bash
-python src/crypto_alerts.py
+python crypto_alerts.py
 ```
 
 ### Send Email Alerts
 Ensure the Gmail API is authorized and configured, then use:
 ```bash
-python src/send_email.py
+python send_email.py
 ```
 
 ## File Structure
