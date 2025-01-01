@@ -4,11 +4,14 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from utils import load_credentials
 from crypto_alerts import send_xrp_alert
+import os
 
-CLIENT_SECRET_FILE = "t"
+credentials = load_credentials()
+
+CLIENT_SECRET_FILE = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "credentials.json")
 API_NAME = "gmail"
 API_VERSION = "v1"
-SCOPES = ["https://mail.google.com"]
+SCOPES = ["https://mail.google.com/"]
 
 service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 
