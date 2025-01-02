@@ -61,14 +61,14 @@ python send_email.py
 ## File Structure
 ```
 CryptoWhatsappAlerts/
-│   ├── crypto_alerts.py       # Monitors cryptocurrency rates
-│   ├── google_service.py      # Handles Gmail API interactions
-│   ├── send_email.py          # Sends email alerts
-│   ├── utils.py               # Helper functions
-├── .gitignore                 # Excludes sensitive files from Git
-├── README.md                  # Project documentation
-├── requirements.txt           # Dependencies
-├── credentials.json           # Gmail API credentials (excluded from Git)
+|── crypto_alerts.py       # Monitors cryptocurrency rates
+├── google_service.py      # Handles Gmail API interactions
+├── send_email.py          # Sends email alerts
+├── utils.py               # Helper functions
+├── .gitignore             # Excludes sensitive files from Git
+├── README.md              # Project documentation
+├── requirements.txt       # Dependencies
+├── credentials.json       # Gmail API credentials (excluded from Git)
 ```
 
 ## Notes
