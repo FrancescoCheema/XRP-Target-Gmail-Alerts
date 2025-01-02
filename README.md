@@ -61,7 +61,6 @@ python send_email.py
 ## File Structure
 ```
 CryptoWhatsappAlerts/
-├── src/
 │   ├── crypto_alerts.py       # Monitors cryptocurrency rates
 │   ├── google_service.py      # Handles Gmail API interactions
 │   ├── send_email.py          # Sends email alerts
