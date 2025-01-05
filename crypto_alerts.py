@@ -1,5 +1,8 @@
 import requests
-url = "http://api.coinlayer.com/live?access_key=77b98b1e1175f96413e3cf91492e40ee"
+import os
+
+access_key = os.getenv("ACCESS_KEY")
+url = f"http://api.coinlayer.com/live?access_key={access_key}"
 params = {
     "symbols" : "XRP",
     "target" : "USD"
@@ -27,6 +30,12 @@ def send_xrp_alert():
                 return f"XRP has reached the target. Currently at {xrp_rate}."
             else:
                 return f"XRP is stable, current rate: {xrp_rate}."
-    return "Error fetching XRP rate."
+        else:
+            raise Exception(f"failed to fetch, status error: {response.status_code}")
 
-send_xrp_alert()
+
+
+try:
+    print(send_xrp_alert())
+except Exception as e:
+    print(f"error {e}")
