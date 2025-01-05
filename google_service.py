@@ -5,6 +5,7 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
 from google.auth.transport.requests import Request
 
+"""Exported secrets to venv environment, communication with gmail API"""
 
 def Create_Service(client_secret_file, api_name, api_version, *scopes):
     print(client_secret_file, api_name, api_version, scopes, sep='-')
@@ -17,7 +18,6 @@ def Create_Service(client_secret_file, api_name, api_version, *scopes):
     cred = None
 
     pickle_file = f'token_{API_SERVICE_NAME}_{API_VERSION}.pickle'
-    # print(pickle_file)
 
     if os.path.exists(pickle_file):
         with open(pickle_file, 'rb') as token:

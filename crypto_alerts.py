@@ -1,6 +1,7 @@
 import requests
 import os
 
+"""Added API, exported key to venv environment"""
 access_key = os.getenv("ACCESS_KEY")
 url = f"http://api.coinlayer.com/live?access_key={access_key}"
 params = {
@@ -8,12 +9,14 @@ params = {
     "target" : "USD"
 }
 
+"""Added thresholds, for when XRP is low, Exceedex, or reaches target"""
 threshold = {
     "low" : 2.00,
     "exceeded": 3.00,
     "target": 5.00
 }
 
+"""get API response in real-time, specifically for XRP and print alerts based off thresholds, XRP price"""
 def send_xrp_alert():
     response = requests.get(url, params=params)
     if response.status_code == 200:

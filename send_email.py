@@ -6,6 +6,8 @@ from utils import load_credentials
 from crypto_alerts import send_xrp_alert
 import os
 
+"""send email via Gmail API, exported credentials to venv environment"""
+
 credentials = load_credentials()
 
 CLIENT_SECRET_FILE = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "credentials.json")
