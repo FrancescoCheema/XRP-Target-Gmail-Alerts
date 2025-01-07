@@ -31,8 +31,6 @@ jobs:
 
       - name: 💿 Install dependencies
         run: pip install -r requirements.txt
-        env:
-
 
       - name: 🚀 Deploy
         run: python crypto_alerts.py
