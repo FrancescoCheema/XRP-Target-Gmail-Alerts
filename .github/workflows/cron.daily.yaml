@@ -27,7 +27,7 @@ jobs:
       - name: 🐍 Set up Python 3.8                               
         uses: actions/setup-python@v2                               
         with:                                 
-          python-version: '3.7'
+          python-version: '3.8.0'
 
       - name: 💿 Install dependencies
         run: pip install -r requirements.txt
