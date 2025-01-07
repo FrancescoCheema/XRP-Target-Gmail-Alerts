@@ -35,5 +35,5 @@ jobs:
 
 
       - name: 🚀 Deploy
-        run: |
+        run: python crypto_alerts.py
           
