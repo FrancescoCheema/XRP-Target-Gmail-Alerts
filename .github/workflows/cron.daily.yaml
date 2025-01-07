@@ -1,0 +1,39 @@
+name: XRP Gmail alert
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 8 * * *" 
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🍽️ Get working copy
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
+      - name: Decode credentials.json
+        run: |
+          echo "$GOOGLE_APPLICATION_CREDENTIALS" | base64 --decode > credentials.json
+
+      - name: Decode token_gmail_v1.pickle
+        run: |
+          echo "$GOOGLE_TOKEN" | base64 --decode > token_gmail_v1.pickle
+
+      - name: 🐍 Set up Python 3.8                               
+        uses: actions/setup-python@v2                               
+        with:                                 
+          python-version: '3.7'
+
+      - name: 💿 Install dependencies
+        run: pip install -r requirements.txt
+        env:
+
+
+      - name: 🚀 Deploy
+        run: |
+          
