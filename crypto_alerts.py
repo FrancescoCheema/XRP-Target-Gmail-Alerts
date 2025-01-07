@@ -9,6 +9,7 @@ from email.mime.multipart import MIMEMultipart
 from googleapiclient.discovery import build
 from google.oauth2.credentials import Credentials
 
+"Load gmail credentials"
 credentials = load_credentials()
 
 CLIENT_SECRET_FILE = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "credentials.json")
