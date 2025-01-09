@@ -10,7 +10,7 @@ This is the coinlayer API documentation https://coinlayer.com/documentation
 - Configurable parameters for currency monitoring.
 
 ## Prerequisites
-- Python 3.7 or higher
+- Python 3.9 or higher
 - A Google Cloud project with Gmail API enabled
 - A `credentials.json` file for Gmail API authentication
 
