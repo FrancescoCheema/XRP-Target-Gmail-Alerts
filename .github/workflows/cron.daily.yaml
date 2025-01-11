@@ -15,20 +15,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-          
-      - name: Reconstruct credentials.json
-        run: |
-          echo '{
-            "installed": {
-              "client_id": "${{ secrets.GOOGLE_CLIENT_ID }}",
-              "project_id": "${{ secrets.GOOGLE_PROJECT_ID }}",
-              "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-              "token_uri": "https://oauth2.googleapis.com/token",
-              "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-              "client_secret": "${{ secrets.GOOGLE_CLIENT_SECRET }}",
-              "redirect_uris": ["http://localhost"]
-            }
-          }' > credentials.json
 
       - name: Reconstruct token.json
         run: |
@@ -45,4 +31,6 @@ jobs:
 
       - name: 🚀 Deploy
         run: python crypto_alerts.py
+        env:
+          ACCESS_KEY: ${{secrets.ACCESS_KEY}}
           
