@@ -10,26 +10,12 @@ from google.oauth2 import service_account
 """Communication with gmail API"""
 
 def Create_Service(client_secret_file, api_name, api_version, *scopes):
-    credentials = service_account.Credentials.from_service_account_file(
-        client_secret_file, scopes=scopes[0]
-    )
-    return build(api_name, api_version, credentials=credentials)
-
-    cred = None
-    token_file = 'token.json'
-
-    if os.path.exists(token_file):
-        cred = Credentials.from_authorized_user_file(token_file, SCOPES)
-
-    if not cred or not cred.valid:
-        if cred and cred.expired and cred.refresh_token:
-            cred.refresh(Request())
-        else:
-            raise RuntimeError("Headless environment cannot support interactive 0Auth flow. Provide a valid token.json")
-
     try:
-        service = build(API_SERVICE_NAME, API_VERSION, credentials=cred)
-        print(API_SERVICE_NAME, 'service created successfully')
+        credentials = service_account.Credentials.from_service_account_file(
+            client_secret_file, scopes=scopes[0]
+        )
+        service = build(api_name, api_version, credentials=credentials)
+        print(f"{api_name} service created successfully")
         return service
     except Exception as e:
         print('Unable to connect.')
