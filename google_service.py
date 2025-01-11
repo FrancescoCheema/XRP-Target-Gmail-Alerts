@@ -4,7 +4,7 @@ from google_auth_oauthlib.flow import Flow, InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
 from google.auth.transport.requests import Request 
-import Credentials
+from google.oauth2.credentials import Credentials
 
 """Communication with gmail API"""
 
