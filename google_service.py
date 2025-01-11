@@ -9,9 +9,10 @@ from google.oauth2.credentials import Credentials
 """Communication with gmail API"""
 
 def Create_Service(client_secret_file, api_name, api_version, *scopes):
-    print(client_secret_file, api_name, api_version, scopes, sep='-')
-    SCOPES = [scope for scope in scopes[0]]
-    print(SCOPES)
+    credentials = service_account.Credentials.from_service_account_file(
+        client_secret_file, scopes=scopes[0]
+    )
+    return build(api_name, api_version, credentials=credentials)
 
     cred = None
     token_file = 'token.json'
