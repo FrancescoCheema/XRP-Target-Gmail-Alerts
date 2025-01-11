@@ -30,6 +30,11 @@ jobs:
             }
           }' > credentials.json
 
+      - name: Reconstruct token.json
+        run: |
+          echo "${{ secrets.TOKEN_JSON }}" | base64 --decode > token.json
+
+
       - name: 🐍 Set up Python 3.8                               
         uses: actions/setup-python@v2                               
         with:                                 
