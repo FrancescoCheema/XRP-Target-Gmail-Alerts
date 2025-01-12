@@ -12,7 +12,7 @@ from google.oauth2.credentials import Credentials
 "Load gmail credentials"
 credentials = load_credentials()
 
-CLIENT_SECRET_FILE = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "credentials.json")
+CLIENT_SECRET_FILE = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "token.json")
 API_NAME = "gmail"
 API_VERSION = "v1"
 SCOPES = ["https://mail.google.com/"]
