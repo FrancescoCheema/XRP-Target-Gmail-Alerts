@@ -1,36 +1,36 @@
-name: XRP Gmail alert
+# name: XRP Gmail alert
 
-on:
-  push:
-    branches:
-      - main
-  schedule:
-    - cron: "0 * * * *" 
+#on:
+  #push:
+    #branches:
+      #- main
+  #schedule:
+    #- cron: "0 * * * *" 
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: 🍽️ Get working copy
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 1
+#jobs:
+  #build-and-deploy:
+    #runs-on: ubuntu-20.04
+    #steps:
+      #- name: Get working copy
+        #uses: actions/checkout@v3
+        #with:
+          #fetch-depth: 1
 
-      - name: Reconstruct token.json
-        run: |
-          echo "${{ secrets.TOKEN_JSON }}" | base64 --decode > token.json
+      #- name: Reconstruct token.json
+        #run: |
+          #echo "${{ secrets.TOKEN_JSON }}" | base64 --decode > token.json
 
 
-      - name: 🐍 Set up Python 3.8                               
-        uses: actions/setup-python@v2                               
-        with:                                 
-          python-version: '3.9'
+      #- name: Set up Python 3.8                               
+        #uses: actions/setup-python@v2                               
+        #with:                                 
+          #python-version: '3.9'
 
-      - name: 💿 Install dependencies
-        run: pip install -r requirements.txt
+      #- name: Install dependencies
+        #run: pip install -r requirements.txt
 
-      - name: 🚀 Deploy
-        run: python crypto_alerts.py
-        env:
-          ACCESS_KEY: ${{secrets.ACCESS_KEY}}
+      #- name: Deploy
+        #run: python crypto_alerts.py
+        #env:
+          #ACCESS_KEY: ${{secrets.ACCESS_KEY}}
           
